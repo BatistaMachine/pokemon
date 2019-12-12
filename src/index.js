@@ -92,7 +92,7 @@ class SignIn extends React.Component {
               variant="contained"
               color="primary"
               className={classes.submit}
-              onClick={password => this.handleClick(this.props.password)}
+              onClick={i => this.handleClick(password.value, "aaa")}
             >
               Sign In
             </Button>
@@ -116,8 +116,10 @@ class SignIn extends React.Component {
       </Container>
     );
   }
-  handleClick(password) {
-    if (true) {
+  handleClick(password, email) {
+    if (password.length === 0) {
+      console.log("pas word", email);
+    } else {
       console.log(password);
     }
   }
