@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import PokemonCard from "./PokemonCard";
-import Loading from "../layout/Loading";
 import axios from "axios";
 
 export default class PokemonList extends Component {
@@ -25,7 +24,7 @@ export default class PokemonList extends Component {
             ))}
           </div>
         ) : (
-          <Loading />
+          <div>Loading</div>
         )}
       </div>
     );
