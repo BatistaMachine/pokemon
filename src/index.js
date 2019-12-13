@@ -27,28 +27,30 @@ function Copyright() {
   );
 }
 
-class SignIn extends React.Component {
+const useStyles = makeStyles(theme => ({
+  paper: {
+    marginTop: theme.spacing(8),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center"
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main
+  },
+  form: {
+    width: "100%", // Fix IE 11 issue.
+    marginTop: theme.spacing(1)
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2)
+  }
+}));
+
+class Form extends React.Component {
   render() {
-    const useStyles = makeStyles(theme => ({
-      paper: {
-        marginTop: theme.spacing(8),
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center"
-      },
-      avatar: {
-        margin: theme.spacing(1),
-        backgroundColor: theme.palette.secondary.main
-      },
-      form: {
-        width: "100%", // Fix IE 11 issue.
-        marginTop: theme.spacing(1)
-      },
-      submit: {
-        margin: theme.spacing(3, 0, 2)
-      }
-    }));
     const classes = useStyles;
+    const result = this.handleClick();
     return (
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -92,7 +94,7 @@ class SignIn extends React.Component {
               variant="contained"
               color="primary"
               className={classes.submit}
-              onClick={i => this.handleClick(password.value, "aaa")}
+              onClick={() => this.handleClick(password.value, email.value)}
             >
               Sign In
             </Button>
@@ -117,13 +119,16 @@ class SignIn extends React.Component {
     );
   }
   handleClick(password, email) {
-    if (password.length === 0) {
-      console.log("pas word", email);
+    let pass = this.props.password;
+    let mail = this.props.email;
+    console.log(pass);
+    if (pass === null || mail === null) {
+      console.log("aaaa");
+      false;
     } else {
-      console.log(password);
+      true;
     }
   }
 }
-
 const rootElement = document.getElementById("root");
-ReactDOM.render(<SignIn />, rootElement);
+ReactDOM.render(<Form />, rootElement);
