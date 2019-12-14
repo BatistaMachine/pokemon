@@ -5,16 +5,23 @@ import NavBar from "./components/layout/NavBar.js";
 import "./App.css";
 import Dashboard from "./components/layout/DashBoard.js";
 import backgroundImage from "./pattern.png";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import Pokemon from "./components/Pokemon/Pokemon";
 
 class App extends React.Component {
   render() {
     return (
-      <div className="App" style={{ background: `url(${backgroundImage})` }}>
-        <NavBar />
-        <div className="container">
-          <Dashboard />
+      <Router>
+        <div className="App" style={{ background: `url(${backgroundImage})` }}>
+          <NavBar />
+          <div className="container">
+            <Switch>
+              <Route exact path="/" component={Dashboard} />
+              <Route exact path="/Pokemon/:pokemonIndex" component={Pokemon} />
+            </Switch>
+          </div>
         </div>
-      </div>
+      </Router>
     );
   }
 }
