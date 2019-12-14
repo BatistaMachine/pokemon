@@ -6,7 +6,7 @@ import "./App.css";
 import Dashboard from "./components/layout/DashBoard.js";
 import backgroundImage from "./pattern.png";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
-import Pokemon from "./components/Pokemon/Pokemon";
+import Pokemon from "./components/Pokemon/Pokemon.js";
 
 class App extends React.Component {
   render() {
