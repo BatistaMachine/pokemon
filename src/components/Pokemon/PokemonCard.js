@@ -19,9 +19,6 @@ export default class PokemonCard extends Component {
         <div className="card">
           <div className="card-header">
             <h5>{this.state.pokemonIndex}</h5>
-            <div className="card-body">
-              <h6 className="card-title mx-auto">{this.state.name}</h6>
-            </div>
           </div>
         </div>
       </div>
