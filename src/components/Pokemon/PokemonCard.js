@@ -31,6 +31,11 @@ export default class PokemonCard extends Component {
             onError={() => this.setState({ toManyRequests: true })}
             src={this.state.imageUrl}
           />
+          {this.state.toManyRequests ? (
+            <h6 className="mx-auto">
+              <span className="badge badge-danger mt-2"> To Many Request</span>
+            </h6>
+          ) : null}
           <div className="card-body mx-auto">
             <h6 className="card-title">
               {this.state.name
