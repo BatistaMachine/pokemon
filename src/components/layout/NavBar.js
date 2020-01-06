@@ -55,6 +55,7 @@ export default class NavBar extends Component {
           PokeDex
         </Branding>
         <SearchBar />
+        <input type="button" value="previous" />
         <input type="button" value="next" />
       </NavBarStyle>
     );
