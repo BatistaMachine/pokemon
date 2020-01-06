@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import classnames from "classnames";
+import SearchBar from "../search/SearchBar";
 
 const Branding = styled.a`
   -moz-user-select: none;
@@ -8,12 +9,6 @@ const Branding = styled.a`
   -ms-user-select: none;
   user-select: none;
   -o-user-select: none;
-`;
-
-const Logo = styled.img`
-  height: 30px;
-  width: 30px;
-  margin-right: 0.5em;
 `;
 
 const NavBarStyle = styled.nav``;
@@ -60,6 +55,7 @@ export default class NavBar extends Component {
         >
           PokeDex
         </Branding>
+        <SearchBar />
       </NavBarStyle>
     );
   }
