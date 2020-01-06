@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import classnames from "classnames";
 import SearchBar from "../search/SearchBar";
 
 const Branding = styled.a`
@@ -56,6 +55,7 @@ export default class NavBar extends Component {
           PokeDex
         </Branding>
         <SearchBar />
+        <input type="button" value="next" />
       </NavBarStyle>
     );
   }
