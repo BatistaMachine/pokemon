@@ -10,6 +10,7 @@ import backgroundImage from "./pattern.png";
 import NavBar from "./components/layout/NavBar";
 import Dashboard from "./components/layout/Dashboard";
 import Pokemon from "./components/Pokemon/Pokemon";
+import SearchBar from "./components/search/SearchBar";
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
       <Router>
         <div className="App" style={{ background: `url(${backgroundImage})` }}>
           <NavBar />
+          <SearchBar />
           <div className="container">
             <Switch>
               <Route exact path="/" component={Dashboard} />
