@@ -17,6 +17,7 @@ class App extends Component {
       <Router>
         <div className="App" style={{ background: `url(${backgroundImage})` }}>
           <NavBar />
+
           <div className="container">
             <Switch>
               <Route exact path="/" component={Dashboard} />
